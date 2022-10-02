@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // spoonacular API
+        const foodApp = {};
+
+        foodApp.apiKey = "8f3777e79d1b407c9e72119675da720d";
+        foodApp.url = " https://api.spoonacular.com/recipes/findByIngredients";
+
+
+
+        foodApp.getRecipes = () => {
+            const foodUrl = new URL(foodApp.url);
+
+            foodUrl.search = new URLSearchParams({
+                ingredients: "pasta, mushrooms",
+                instructionsRequired: true,
+                number: 9,
+                apiKey: foodApp.apiKey
+            });
+
+            console.log(foodUrl);
+
+            fetch(foodUrl)
+            .then((apiPromise) => {
+                return apiPromise.json()
+            })
+            .then((apiPromise) => {
+                console.log(apiPromise);
+            })
+        }
+
+        // initialization 
+        foodApp.init = () => {
+            console.log("page initalized");
+            foodApp.getRecipes();
+        }
+
+        foodApp.init();
+
+    </script>
+</body>
+</html>
