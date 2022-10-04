@@ -1,0 +1,30 @@
+.navBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    padding-top: 1rem;
+}
+
+.logo {
+    color: rgb(249, 147, 31);
+    font-size: 2rem;
+    
+}
+
+.navLinks ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navLinks li {
+    list-style-type: none;
+}
+
+.navLinks li a {
+    text-decoration: none;
+    color: hwb(0 39% 61%);
+    padding: 1rem;
+    display: block;
+}
