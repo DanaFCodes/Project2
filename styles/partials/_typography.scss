@@ -2,8 +2,26 @@
 
 h1 {
     font-family: 'Dangrek', cursive;
+    color: $h1;
 }
 
 h2 {
     font-family: 'Noto Sans Mono', monospace;
+    color: $h2;
+}
+
+h3 {
+    font-family: 'Dangrek', cursive;
+    color: $h1;
+}
+
+body {
+    background-color: $backgroundColor;
+    color: hwb(0 20% 80%);
+}
+
+.wrapper {
+    max-width: 1260px;
+    width: 93%;
+    margin: 0 auto;
 }
