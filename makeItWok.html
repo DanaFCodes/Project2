@@ -56,54 +56,16 @@
 
     <form>
         <label for="ingredients">Enter your ingredients!</label>
-        <input type="text" name="ingredients" >
+        <input class="input" type="text" name="ingredients" >
         <button>submit</button>
     </form>
 
+    <div id="foodContainer"></div>
+
    
 
-
+<script src="./app.js"></script>
 
 </header>
-
-    <script>
-        // spoonacular API
-        const foodApp = {};
-
-        foodApp.apiKey = "8f3777e79d1b407c9e72119675da720d";
-        foodApp.url = " https://api.spoonacular.com/recipes/findByIngredients";
-
-
-
-        foodApp.getRecipes = () => {
-            const foodUrl = new URL(foodApp.url);
-
-            foodUrl.search = new URLSearchParams({
-                ingredients: "pasta, mushrooms",
-                instructionsRequired: true,
-                number: 9,
-                apiKey: foodApp.apiKey
-            });
-
-            console.log(foodUrl);
-
-            fetch(foodUrl)
-            .then((apiPromise) => {
-                return apiPromise.json()
-            })
-            .then((apiPromise) => {
-                console.log(apiPromise);
-            })
-        }
-
-        // initialization 
-        foodApp.init = () => {
-            console.log("page initalized");
-            foodApp.getRecipes();
-        }
-
-        foodApp.init();
-
-    </script>
 </body>
 </html>
