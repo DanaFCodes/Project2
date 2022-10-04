@@ -1,3 +1,4 @@
+@charset "UTF-8";
 h1 {
   font-family: "Dangrek", cursive;
   color: rgb(79, 74, 151);
@@ -13,15 +14,70 @@ h3 {
   color: rgb(79, 74, 151);
 }
 
-body {
-  background-color: rgb(225, 217, 255);
+h4 {
+  font-family: "Noto Sans Mono", monospace;
   color: hwb(0 20% 80%);
 }
 
-.wrapper {
-  max-width: 1260px;
-  width: 93%;
-  margin: 0 auto;
+body {
+  background-color: rgb(225, 217, 255);
+}
+
+.wok {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.h1 {
+  margin-bottom: -10px;
+  margin-top: 50px;
+  font-size: 3rem;
+  margin-left: 10px;
+}
+
+.h1::after {
+  content: "🍳";
+}
+
+.h2 {
+  font-size: 1.5rem;
+}
+
+.h4 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: -20px;
+}
+
+.userGuide {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+}
+
+.userGuide li {
+  list-style-type: none;
+  font-family: "Noto Sans Mono", monospace;
+  font-size: 0.8rem;
 }
 
 html {
@@ -252,6 +308,16 @@ html {
   overflow: hidden;
 }
 
+.wrapper {
+  max-width: 1260px;
+  width: 93%;
+  margin: 0 auto;
+}
+
+html {
+  font-size: 125%;
+}
+
 .navBar {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -268,7 +334,7 @@ html {
 
 .logo {
   color: rgb(249, 147, 31);
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
 .navLinks ul {
@@ -288,4 +354,10 @@ html {
   color: hwb(0 39% 61%);
   padding: 1rem;
   display: block;
+  font-family: "Dangrek", cursive;
+  font-size: 1.3rem;
+}
+
+.navLinks li a:hover {
+  color: rgb(79, 74, 151);
 }

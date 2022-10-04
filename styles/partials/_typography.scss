@@ -1,27 +1,27 @@
 @use 'variables' as *;
 
 h1 {
-    font-family: 'Dangrek', cursive;
+    font-family: $dan;
     color: $h1;
 }
 
 h2 {
-    font-family: 'Noto Sans Mono', monospace;
+    font-family: $noto;
     color: $h2;
 }
 
 h3 {
-    font-family: 'Dangrek', cursive;
+    font-family: $dan;
     color: $h1;
+}
+
+h4 {
+    font-family: $noto;
+    color: $darkgrey;
+
 }
 
 body {
     background-color: $backgroundColor;
-    color: hwb(0 20% 80%);
 }
 
-.wrapper {
-    max-width: 1260px;
-    width: 93%;
-    margin: 0 auto;
-}
