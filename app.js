@@ -5,8 +5,13 @@ foodApp.apiKey = "8ea4a98517084d33ba459cc3ea2249ea";
 foodApp.url = " https://api.spoonacular.com/recipes/findByIngredients";
 
 
-// clear out form
-// error handling!
+// clear out form✅
+// error handling! (throw catch)
+// alert user if they do not input ingredients✅, and alert user if they enter more than x amount
+// collapsable user guide 
+
+// style the results 
+// gallery?
 
 
 foodApp.getRecipes = function(userSelection) {
@@ -60,13 +65,33 @@ foodApp.events = function () {
         e.preventDefault();
         const input = document.querySelector(".input");
         foodApp.getRecipes(input.value);
+
+        function validateForm() {
+            const empt = document.forms["myForm"]["ingredients"].value;
+            if (empt == "") {
+                alert("please enter some ingredients!");
+                return false;
+            }
+            return true;
+        }
+        validateForm(form);
+
+        
+        // JUST US KILLIN IT:
+        document.getElementById('myForm').reset();
     })
+
+    
 };
+
+
+
 
 // initialization 
 foodApp.init = () => {
     // console.log("page initalized");
     foodApp.events();
+    
 }
 
 foodApp.init();
