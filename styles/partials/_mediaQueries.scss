@@ -1,0 +1,61 @@
+@use 'variables' as *;
+
+@media (max-width: 500px) {
+
+    .h1 {
+       margin-top: 5%;
+    }
+     
+    .h1::after {
+        content: '';
+    }
+
+    .h3::after {
+        content: '🍳';
+    }
+    
+    label {
+        font-size: 15px;
+        width: 100%;
+    }
+
+    form {
+        width: 100%;
+    }
+
+    .toggleButton {
+        display: flex;
+    }
+
+    .navLinks {
+        // display: none;
+        width: 100%;
+        transform: translateX(-110%);
+        transition: transform 0.6s ease-in;
+    }
+
+    .navBar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navLinks ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .navLinks li {
+        text-align: right;
+        background-color: rgba(97, 97, 97, 0.516);
+    }
+
+    .navLinks li a {
+        padding: .5rem 1rem;
+    }
+
+    .navLinks.active {
+        // display: flex;
+        transform: translateX(0%);
+    }
+
+}

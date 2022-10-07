@@ -7,10 +7,14 @@ foodApp.url = " https://api.spoonacular.com/recipes/findByIngredients";
 
 // clear out form✅
 // error handling! (throw catch)
-// alert user if they do not input ingredients✅, and alert user if they enter more than x amount
-// collapsable user guide 
+// invalid ingedietns (alert)
+// alert user if they do not input ingredients✅
 
-// style the results 
+// responsive nav✅
+// collapsable user guide
+
+// style the results ✅
+// style width at full browser width = calc(100 /3);
 // gallery?
 
 
@@ -22,7 +26,7 @@ foodApp.getRecipes = function(userSelection) {
         // ingredients: "tomato",
         image: true,
         instructionsRequired: true,
-        number: 9,
+        number: 8,
         apiKey: foodApp.apiKey
     });
    
@@ -74,24 +78,46 @@ foodApp.events = function () {
             }
             return true;
         }
+
+        fetch(foodApp) 
+            .then((res) => {
+                if (res.ok) {
+                    return res.json();
+                } else {
+                    throw new Error("please try entering a different ingredient!");
+                }
+            })
+            .then((apiPromise) => {
+                console.log(apiPromise);
+            })
+            .catch((err) => {
+                console.log(err);
+            })
+
         validateForm(form);
 
-        
         // JUST US KILLIN IT:
         document.getElementById('myForm').reset();
+
     })
-
-    
 };
-
-
 
 
 // initialization 
 foodApp.init = () => {
     // console.log("page initalized");
     foodApp.events();
-    
 }
 
 foodApp.init();
+
+
+
+// hamburger nav 
+
+const toggleButton = document.getElementsByClassName("toggleButton")[0]
+const navLinks = document.getElementsByClassName("navLinks")[0]
+
+toggleButton.addEventListener('click', () => {
+    navLinks.classList.toggle('active')
+})
