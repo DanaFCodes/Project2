@@ -1,8 +1,10 @@
 // spoonacular API
 const foodApp = {};
+// const foodGallery = {};
 
 foodApp.apiKey = "956722d4112f4ae385dd4d0c9bd38fc2";
 foodApp.url = " https://api.spoonacular.com/recipes/findByIngredients";
+// foodGallery.url = "https://api.spoonacular.com/recipes/complexSearch";
 
 
 // clear out form✅
@@ -96,6 +98,8 @@ foodApp.init = () => {
 
 foodApp.init();
 
+// foodGallery.init();
+
 
 
 // hamburger nav 
@@ -105,3 +109,25 @@ const navLinks = document.getElementsByClassName("navLinks")[0]
 toggleButton.addEventListener('click', () => {
     navLinks.classList.toggle('active')
 })
+
+// // Gallery starts here
+// foodGallery.getRecipes = function () {
+//     const foodUrl = new URL(foodGallery.url);
+
+//     foodUrl.search = new URLSearchParams({
+//         image: true,
+//         instructionsRequired: true,
+//         number: 8,
+//         apiKey: foodApp.apiKey
+//     });
+
+//     fetch(foodUrl)
+//         .then((apiPromise) => {
+//             return apiPromise.json()
+//         })
+//         .then((apiPromise) => {
+//             document.querySelector("#foodContainer").innerHTML = "";
+//             console.log(apiPromise);
+//             foodApp.displayFood(apiPromise);
+//         })
+// }
