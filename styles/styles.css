@@ -155,18 +155,32 @@ button:hover {
 }
 
 /* form feature ends here */
-.galleryDiv {
-  height: 81vh;
-}
-
 .footer {
   width: 100%;
   text-align: center;
   font-family: "Noto Sans Mono", monospace;
   font-weight: 600;
   background-color: rgb(79, 74, 151);
+  margin-top: 5%;
 }
 .footer p {
+  margin: 0 auto;
+  padding: 0;
+  font-size: 0.8rem;
+  width: 100%;
+}
+
+.galleryFooter {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  font-family: "Noto Sans Mono", monospace;
+  font-weight: 600;
+  background-color: rgb(79, 74, 151);
+  margin-top: 5%;
+}
+.galleryFooter p {
   margin: 0 auto;
   padding: 0;
   font-size: 0.8rem;
@@ -481,8 +495,14 @@ html {
   .h1::after {
     content: "";
   }
+  .galleryH2 {
+    font-size: 0.9rem;
+  }
   .h3::after {
     content: "🍳";
+  }
+  .galleryH3 {
+    font-size: 0.9rem;
   }
   label {
     font-size: 15px;

@@ -10,8 +10,16 @@
         content: '';
     }
 
+    .galleryH2 {
+        font-size: 0.9rem;
+    }
+
     .h3::after {
         content: '🍳';
+    }
+
+    .galleryH3 {
+        font-size: 0.9rem;
     }
     
     label {
@@ -58,7 +66,4 @@
 
 }
 
-<<<<<<< HEAD
-// ADD MEDIA QUERY FOR GALLERY PAGE
-=======
->>>>>>> c373502bf3923ac36314de2bbe16306ef51905c0
+
