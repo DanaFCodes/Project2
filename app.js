@@ -1,13 +1,13 @@
 // spoonacular API
 const foodApp = {};
 
-foodApp.apiKey = "8ea4a98517084d33ba459cc3ea2249ea";
+foodApp.apiKey = "956722d4112f4ae385dd4d0c9bd38fc2";
 foodApp.url = " https://api.spoonacular.com/recipes/findByIngredients";
 
 
 // clear out form✅
-// error handling! (throw catch)
-// invalid ingedietns (alert)
+// error handling! (throw catch)✅
+// invalid ingedietns (alert)✅
 // alert user if they do not input ingredients✅
 
 // responsive nav✅
@@ -29,7 +29,6 @@ foodApp.getRecipes = function(userSelection) {
         number: 8,
         apiKey: foodApp.apiKey
     });
-   
 
     fetch(foodUrl)
         .then((apiPromise) => {
@@ -39,12 +38,16 @@ foodApp.getRecipes = function(userSelection) {
             document.querySelector("#foodContainer").innerHTML = "";
             console.log(apiPromise);
             foodApp.displayFood(apiPromise);
-        })
+        }) 
 }
 
 foodApp.displayFood = (arrayOfFood) => {
     console.log(arrayOfFood);
 
+    // error handling b/c spoonacular api does not have an "ok" property🙃
+    if (arrayOfFood.length == 0) {
+        alert("Please try entering a different ingredient");
+    }
 
     arrayOfFood.forEach((foodObject) => {
         const image = document.createElement('img')
@@ -73,39 +76,21 @@ foodApp.events = function () {
         function validateForm() {
             const empt = document.forms["myForm"]["ingredients"].value;
             if (empt == "") {
-                alert("please enter some ingredients!");
+                alert("Please enter at least one ingredient!");
                 return false;
             }
             return true;
         }
+            validateForm(form);
 
-        fetch(foodApp) 
-            .then((res) => {
-                if (res.ok) {
-                    return res.json();
-                } else {
-                    throw new Error("please try entering a different ingredient!");
-                }
-            })
-            .then((apiPromise) => {
-                console.log(apiPromise);
-            })
-            .catch((err) => {
-                console.log(err);
-            })
+            // JUST US KILLIN IT, clearing that form!!
+            document.getElementById('myForm').reset();
 
-        validateForm(form);
-
-        // JUST US KILLIN IT:
-        document.getElementById('myForm').reset();
-
-    })
-};
-
+        })
+}
 
 // initialization 
 foodApp.init = () => {
-    // console.log("page initalized");
     foodApp.events();
 }
 
@@ -114,7 +99,6 @@ foodApp.init();
 
 
 // hamburger nav 
-
 const toggleButton = document.getElementsByClassName("toggleButton")[0]
 const navLinks = document.getElementsByClassName("navLinks")[0]
 
