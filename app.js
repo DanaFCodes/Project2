@@ -1,9 +1,26 @@
 // spoonacular API
 const foodApp = {};
 
-foodApp.apiKey = "8ea4a98517084d33ba459cc3ea2249ea";
+foodApp.apiKey = "956722d4112f4ae385dd4d0c9bd38fc2";
 foodApp.url = " https://api.spoonacular.com/recipes/findByIngredients";
 
+<<<<<<< HEAD
+=======
+
+// clear out form✅
+// error handling! (throw catch)✅
+// invalid ingedietns (alert)✅
+// alert user if they do not input ingredients✅
+
+// responsive nav✅
+// collapsable user guide
+
+// style the results ✅
+// style width at full browser width = calc(100 /3);
+// gallery?
+
+
+>>>>>>> c373502bf3923ac36314de2bbe16306ef51905c0
 foodApp.getRecipes = function(userSelection) {
     const foodUrl = new URL(foodApp.url);
 
@@ -22,11 +39,15 @@ foodApp.getRecipes = function(userSelection) {
         .then((apiPromise) => {
             document.querySelector("#foodContainer").innerHTML = "";
             foodApp.displayFood(apiPromise);
-        })
+        }) 
 }
 
 foodApp.displayFood = (arrayOfFood) => {
 
+<<<<<<< HEAD
+=======
+    // error handling b/c spoonacular api does not have an "ok" property🙃
+>>>>>>> c373502bf3923ac36314de2bbe16306ef51905c0
     if (arrayOfFood.length == 0) {
         alert("Please try entering a different ingredient");
     }
@@ -57,12 +78,14 @@ foodApp.events = function () {
         function validateForm() {
             const empt = document.forms["myForm"]["ingredients"].value;
             if (empt == "") {
-                alert("please enter some ingredients!");
+                alert("Please enter at least one ingredient!");
                 return false;
             }
             return true;
         }
+            validateForm(form);
 
+<<<<<<< HEAD
         function disclaimer() {
             const showText = "Like what you see? Try searching the name of the meal in your favourite (online) recipe book🍴📖"
             document.getElementById('submitText').innerHTML = showText;
@@ -75,6 +98,14 @@ foodApp.events = function () {
     })
 };
 
+=======
+            // JUST US KILLIN IT, clearing that form!!
+            document.getElementById('myForm').reset();
+
+        })
+}
+
+>>>>>>> c373502bf3923ac36314de2bbe16306ef51905c0
 // initialization 
 foodApp.init = () => {
     foodApp.events();

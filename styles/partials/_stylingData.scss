@@ -11,9 +11,21 @@
     background-color: $h1;
     border: $h1 solid 5px;
     margin: 2%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    width: 312px;
+    height: 270px;
+    overflow: hidden;
+    
+    image {
+        width: 100%;
+    }
+
     p {
         color: white;
         text-align: center;
+        flex-wrap: wrap;
     }
 }
 
