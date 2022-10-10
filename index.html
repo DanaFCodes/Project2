@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@300;400;500;600;900&display=swap"
         rel="stylesheet">
-    <title>Make it WOK-Home</title>
+    <title>Make it WOK!</title>
 </head>
 
 <body>
@@ -43,26 +43,29 @@
     <h2 class="h2">what's in your fridge?</h2>
     </div>
 
-    <h4 class="h4">User guide!</h4>
-    <div class="userGuide">
-    
-    <ul>
-        <li>
-            <p>Step 1: Check your fridge! Whatchya' cooking with?</p>
-        </li>
-        <li>
-            <p>Step 2: Enter 1-3 ingredients in the text-box. Seperate multiple ingredients by commas, please!</p>
-        </li>
-        <li>
-            <p>Step 3: Once you've entered at least one ingredient, hit submit to get some dinner inspo!</p>
-        </li>
-    </ul>
+    <div class="h4Container">
+        <h4 class="h4">User guide!</h4>
+        <button type="button" class="guideButton"><div class="arrow"></div></button>
+    </div>
+
+    <div class="active userGuide">
+        <ul>
+            <li>
+                <p>Step 1: Check your fridge! Whatchya' cooking with?</p>
+            </li>
+            <li>
+                <p>Step 2: Enter 1-3 ingredients in the text-box. Seperate multiple ingredients by commas, please!</p>
+            </li>
+            <li>
+                <p>Step 3: Once you've entered at least one ingredient, hit submit to get some dinner inspo!</p>
+            </li>
+        </ul>
     </div>
 
     <form id="myForm">
         <label for="ingredients">Enter your ingredients!</label>
         <input class="input" type="text" name="ingredients" >
-        <button>submit</button>
+        <button class="formButton">submit</button>
     </form>
     <div id="submitText"></div>
     <div id="foodContainer"></div>

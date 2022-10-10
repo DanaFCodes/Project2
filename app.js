@@ -1,5 +1,6 @@
 // spoonacular API
 const foodApp = {};
+// const foodGallery = {};
 
 foodApp.apiKey = "956722d4112f4ae385dd4d0c9bd38fc2";
 foodApp.url = " https://api.spoonacular.com/recipes/findByIngredients";
@@ -90,3 +91,20 @@ const navLinks = document.getElementsByClassName("navLinks")[0]
 toggleButton.addEventListener('click', () => {
     navLinks.classList.toggle('active')
 })
+
+// collapsible section - user guide
+const userGuide = document.getElementsByClassName('guideButton');
+let i;
+
+for(i = 0; i < userGuide.length; i++){
+    userGuide[i].addEventListener("click", function() {
+        this.classList.toggle("active")
+
+        const steps = document.querySelector(".userGuide");
+        if (steps.style.display == "block") {
+            steps.style.display = "none";
+        } else {
+            steps.style.display = "block";
+        }
+    })
+}
