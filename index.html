@@ -15,10 +15,10 @@
     <title>Make it WOK!</title>
 </head>
 
-<body class="wrapper">
-<header>
+<body>
+<header class="wrapper">
     <nav class="navBar">
-        <a href="#"><h3 class="h3">Make it WOK!</h3></a>
+        <a href="./index.html"><h3 class="h3">Make it WOK!</h3></a>
         <a href="#" class="toggleButton">
             <div class="bar"></div>
             <div class="bar"></div>
@@ -27,7 +27,7 @@
         <div class="navLinks">
         <ul>
             <li>
-                <a href="./makeItWok.html">Home</a>
+                <a href="./index.html">Home</a>
             </li>
             <li>
                 <a href="./gallery.html">Gallery</a>
@@ -35,7 +35,9 @@
         </ul>
         </div>
     </nav>
+</header>
 
+<main class="wrapper">
     <div class="wok">
     <h1 class="h1">Make it WOK!</h1>
     <h2 class="h2">what's in your fridge?</h2>
@@ -65,13 +67,15 @@
         <input class="input" type="text" name="ingredients" >
         <button class="formButton">submit</button>
     </form>
-
+    <div id="submitText"></div>
     <div id="foodContainer"></div>
+</main>
 
-   
+<footer class="footer">
+    <p>MADE BY DANA&PATRISHA &copy; JUNO COLLEGE 2022</p>
+</footer>
 
 <script src="./app.js"></script>
 
-</header>
 </body>
 </html>

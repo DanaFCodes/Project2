@@ -116,6 +116,15 @@ p {
   font-size: 0.8rem;
 }
 
+#submitText {
+  text-align: center;
+  padding-top: 5%;
+  margin-bottom: -4%;
+  font-family: "Noto Sans Mono", monospace;
+  color: rgb(145, 128, 159);
+  font-size: 0.7rem;
+}
+
 /* form feature starts here */
 form {
   display: -webkit-box;
@@ -166,6 +175,24 @@ label {
 }
 
 /* form feature ends here */
+.galleryDiv {
+  height: 81vh;
+}
+
+.footer {
+  width: 100%;
+  text-align: center;
+  font-family: "Noto Sans Mono", monospace;
+  font-weight: 600;
+  background-color: rgb(79, 74, 151);
+}
+.footer p {
+  margin: 0 auto;
+  padding: 0;
+  font-size: 0.8rem;
+  width: 100%;
+}
+
 html {
   line-height: 1.15;
   -ms-text-size-adjust: 100%;
