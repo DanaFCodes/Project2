@@ -6,8 +6,8 @@ foodApp.url = " https://api.spoonacular.com/recipes/findByIngredients";
 
 
 // clear out form✅
-// error handling! (throw catch)
-// invalid ingedietns (alert)
+// error handling! (throw catch)✅
+// invalid ingedietns (alert)✅
 // alert user if they do not input ingredients✅
 
 // responsive nav✅
