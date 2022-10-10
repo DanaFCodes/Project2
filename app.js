@@ -4,32 +4,16 @@ const foodApp = {};
 foodApp.apiKey = "8ea4a98517084d33ba459cc3ea2249ea";
 foodApp.url = " https://api.spoonacular.com/recipes/findByIngredients";
 
-
-// clear out form✅
-// error handling! (throw catch)
-// invalid ingedietns (alert)
-// alert user if they do not input ingredients✅
-
-// responsive nav✅
-// collapsable user guide
-
-// style the results ✅
-// style width at full browser width = calc(100 /3);
-// gallery?
-
-
 foodApp.getRecipes = function(userSelection) {
     const foodUrl = new URL(foodApp.url);
 
     foodUrl.search = new URLSearchParams({
         ingredients: userSelection,
-        // ingredients: "tomato",
         image: true,
         instructionsRequired: true,
-        number: 8,
+        number: 80,
         apiKey: foodApp.apiKey
     });
-   
 
     fetch(foodUrl)
         .then((apiPromise) => {
@@ -37,14 +21,15 @@ foodApp.getRecipes = function(userSelection) {
         })
         .then((apiPromise) => {
             document.querySelector("#foodContainer").innerHTML = "";
-            console.log(apiPromise);
             foodApp.displayFood(apiPromise);
         })
 }
 
 foodApp.displayFood = (arrayOfFood) => {
-    console.log(arrayOfFood);
 
+    if (arrayOfFood.length == 0) {
+        alert("Please try entering a different ingredient");
+    }
 
     arrayOfFood.forEach((foodObject) => {
         const image = document.createElement('img')
@@ -59,13 +44,12 @@ foodApp.displayFood = (arrayOfFood) => {
         fridge.append(image, title);
 
         document.querySelector("#foodContainer").appendChild(fridge);
-    })
+    });
 }
 
 foodApp.events = function () {
     const form = document.querySelector("form");
     form.addEventListener("submit", function (e) {
-        // makes sure form doesnt take us elsewhere 
         e.preventDefault();
         const input = document.querySelector(".input");
         foodApp.getRecipes(input.value);
@@ -79,42 +63,26 @@ foodApp.events = function () {
             return true;
         }
 
-        fetch(foodApp) 
-            .then((res) => {
-                if (res.ok) {
-                    return res.json();
-                } else {
-                    throw new Error("please try entering a different ingredient!");
-                }
-            })
-            .then((apiPromise) => {
-                console.log(apiPromise);
-            })
-            .catch((err) => {
-                console.log(err);
-            })
+        function disclaimer() {
+            const showText = "Like what you see? Try searching the name of the meal in your favourite (online) recipe book🍴📖"
+            document.getElementById('submitText').innerHTML = showText;
+        }
 
         validateForm(form);
+        disclaimer();
 
-        // JUST US KILLIN IT:
         document.getElementById('myForm').reset();
-
     })
 };
 
-
 // initialization 
 foodApp.init = () => {
-    // console.log("page initalized");
     foodApp.events();
 }
 
 foodApp.init();
 
-
-
 // hamburger nav 
-
 const toggleButton = document.getElementsByClassName("toggleButton")[0]
 const navLinks = document.getElementsByClassName("navLinks")[0]
 
