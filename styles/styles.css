@@ -177,15 +177,17 @@ label {
 /* form feature ends here */
 .footer {
   width: 100%;
+  position: sticky;
   text-align: center;
   font-family: "Noto Sans Mono", monospace;
   font-weight: 600;
   background-color: rgb(79, 74, 151);
-  margin-top: 5%;
+  margin: 0 auto;
+  margin-top: 30px;
 }
 .footer p {
   margin: 0 auto;
-  padding: 0;
+  padding: 5px 0px;
   font-size: 0.8rem;
   width: 100%;
 }
@@ -582,7 +584,7 @@ html {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
-  margin-top: 7%;
+  margin-top: 20%;
 }
 
 .meal {
