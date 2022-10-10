@@ -110,6 +110,23 @@ toggleButton.addEventListener('click', () => {
     navLinks.classList.toggle('active')
 })
 
+// collapsible section - user guide
+const userGuide = document.getElementsByClassName('guideButton');
+let i;
+
+for(i = 0; i < userGuide.length; i++){
+    userGuide[i].addEventListener("click", function() {
+        this.classList.toggle("active")
+
+        const steps = document.querySelector(".userGuide");
+        if (steps.style.display == "block") {
+            steps.style.display = "none";
+        } else {
+            steps.style.display = "block";
+        }
+    })
+}
+
 // // Gallery starts here
 // foodGallery.getRecipes = function () {
 //     const foodUrl = new URL(foodGallery.url);
